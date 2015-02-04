@@ -1,0 +1,53 @@
+
+<head>
+ <!-- Latest compiled and minified CSS -->
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+  <title>Meteor Contact Cards</title>
+</head>
+
+
+
+<body>
+  <div class="container">
+  	<header>
+  	  	<h1>Welcome to Contact Cards using Meteor!</h1>
+
+  	<form class="form-inline" id="new-contact">
+	  <div class="form-group">
+	    <label class="sr-only" for="first_name">First Name</label>
+	    <input type="text" class="form-control" id="first_name" placeholder="Enter First Name">
+	  </div>
+	  <div class="form-group">
+	    <label class="sr-only" for="last_name">Last Name</label>
+	    <input type="text" class="form-control" id="last_name" placeholder="Enter Last Name">
+	  </div>
+	  <div class="form-group">
+	    <label class="sr-only" for="birthday">Birthday</label>
+	    <input type="text" class="form-control" id="birthday" placeholder="Enter Birthday date">
+	  </div>
+	  <div class="form-group">
+	    <label class="sr-only" for="website">Website</label>
+	    <input type="url" class="form-control" id="website" placeholder="http://" value="http://">
+	  </div>	
+	   <div class="form-group">
+	    <label class="sr-only" for="email">Email</label>
+	    <input type="email" class="form-control" id="email" placeholder="someone@example.com">
+	  </div>  
+	  <button type="submit" class="btn btn-default">Add Contact</button>
+  	</form>
+
+	</header>
+	<br/>
+	<div class="col-md-12">
+	{{#each contacts}}
+  		{{> one_contact}}
+  	{{/each}}
+  	</div>
+  </div>
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+</body>
+
+<template name="one_contact">
+  <p> <strong>{{ first_name }} {{ last_name }}</strong> born on <strong>{{ birthday }}</strong> has a website at <strong>{{ website }}</strong> and you can access him/her at <strong>{{ email }}</strong>.</p>
+</template>
