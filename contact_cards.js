@@ -30,8 +30,13 @@ if (Meteor.isClient) {
 
       console.log("New contact [" + first_name + " " + last_name + "] was added to the database.")
 
-      event.target.first_name = "";
-      event.target.last_name = "";
+      event.target.first_name.value = "";
+      event.target.last_name.value = "";
+      event.target.birthday.value = "";
+      event.target.website.value = "http://";
+      event.target.email.value = "";
+
+
 
       return false;
     }
